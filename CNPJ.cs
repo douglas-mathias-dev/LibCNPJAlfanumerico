@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace CNPJAlfanumerico
+namespace LibCNPJAlfanumerico
 {
     public static class CNPJ
     {

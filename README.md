@@ -41,4 +41,4 @@ LibCNPJAlfanumerico
 
 ## Licença
 
-[`MIT`](.\LICENSE.txt)
+[`MIT`](LICENSE.txt)

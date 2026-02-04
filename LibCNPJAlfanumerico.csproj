@@ -4,6 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>CNPJ Alfanumérico - Biblioteca</Title>
+    <Authors>Douglas Mathias</Authors>
+    <Description>Biblioteca com funções de validação, limpeza e geração de CNPJs alfanuméricos</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/douglas-mathias-dev/LibCNPJAlfanumerico</RepositoryUrl>
+    <PackageTags>cnpj;biblioteca;cnpj-validator;cnpj-alfanumerico;cnpj-limpeza</PackageTags>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

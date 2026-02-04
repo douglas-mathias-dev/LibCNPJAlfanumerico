@@ -4,6 +4,8 @@ namespace LibCNPJAlfanumerico
 {
     public static class CNPJ
     {
+        public enum TipoDoEstabelecimento { Matriz, Filial }
+
         private static int Calcular_DigitoVerificador(string cnpj)
         {
             List<int> listCNPJ = new List<int>();
@@ -59,6 +61,29 @@ namespace LibCNPJAlfanumerico
             cnpjLimpo = cnpjLimpo.Substring(cnpjLimpo.Length - 14, 14);
 
             return cnpjLimpo.ToUpper();
+        }
+
+        public static string Gerar()
+        {
+            string cnpjSemDigito = $"{new string(Enumerable.Repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 12).Select(s => s[new Random().Next(36)]).ToArray())}";
+
+            int digito1 = Calcular_DigitoVerificador(cnpjSemDigito);
+            int digito2 = Calcular_DigitoVerificador($"{cnpjSemDigito}{digito1}");
+            return $"{cnpjSemDigito}{digito1}{digito2}";
+        }
+
+        public static string Gerar(TipoDoEstabelecimento tipoEstabelecimento)
+        {
+            string cnpjSemDigito = new string(Enumerable.Repeat("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", tipoEstabelecimento.Equals(TipoDoEstabelecimento.Matriz) ? 8 : 12).Select(s => s[new Random().Next(36)]).ToArray());
+
+            if (tipoEstabelecimento.Equals(TipoDoEstabelecimento.Matriz))
+            {
+                cnpjSemDigito += "0001";
+            }
+
+            int digito1 = Calcular_DigitoVerificador(cnpjSemDigito);
+            int digito2 = Calcular_DigitoVerificador($"{cnpjSemDigito}{digito1}");
+            return $"{cnpjSemDigito}{digito1}{digito2}";
         }
     }
 }

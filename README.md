@@ -19,7 +19,7 @@ Baixe o último release e importe para o seu projeto
 
 > v0.0.1 [`LibCNPJAlfanumerico.dll`](https://github.com/douglas-mathias-dev/LibCNPJAlfanumerico/releases/download/v0.0.1/LibCNPJAlfanumerico.dll)
 
-Utilize os métodos Validar e Limpar da DLL
+Utilize os métodos Validar e Limpar
 
 ```cs
 string cnpj = ""; // O CNPJ que será validado ou limpo

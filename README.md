@@ -10,27 +10,29 @@ LibCNPJAlfanumerico
 |   LibCNPJAlfanumerico.sln      # Arquivo de projeto Visual Studio
 |
 \---CNPJ
-        CNPJ.cs                  # Classe com as funções da biblioteca
+        CNPJ.cs                  # Classe com as funções (Validar, Limpar) da biblioteca 
 ``` 
 
 ## Guia de Utilização da biblioteca
 
-Baixe o último release e importe para o seu projeto
+1. Baixe o último release e importe para o seu projeto
 
-> v0.0.1 [`LibCNPJAlfanumerico.dll`](https://github.com/douglas-mathias-dev/LibCNPJAlfanumerico/releases/download/v0.0.1/LibCNPJAlfanumerico.dll)
+	> v0.0.1 [`LibCNPJAlfanumerico.dll`](https://github.com/douglas-mathias-dev/LibCNPJAlfanumerico/releases/download/v0.0.1/LibCNPJAlfanumerico.dll)
 
-Utilize os métodos Validar e Limpar
+2. Utilize os métodos Validar e Limpar
 
-```cs
-string cnpj = ""; // O CNPJ que será validado ou limpo
-
-if(LibCNPJAlfanumerico.Validar(cnpj)) // Verificando se o CNPJ é um CNPJ válido ou não
-{
-	// Caso o CNPJ seja válido
-}
-
-string cnpjLimpo = LibCNPJAlfanumerico.Limpar(cnpj); // Para limpar o seu CNPJ
-```
+	Exemplo:
+	
+	```cs
+	string cnpj = "CNPJ Fictício: A1.B23.4D5/678E-90"; // O CNPJ que será limpo e validado
+	
+	cnpj = LibCNPJAlfanumerico.CNPJ.Limpar(cnpj); // Para limpar o seu CNPJ
+	
+	if(LibCNPJAlfanumerico.CNPJ.Validar(cnpj)) // Verificando se o CNPJ é um CNPJ válido ou não
+	{
+		// Caso o CNPJ seja válido
+	}
+	```
 
 ## Contribua
 
